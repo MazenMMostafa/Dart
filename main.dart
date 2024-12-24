@@ -1,17 +1,18 @@
 void main() {
   const double tax = 0.1;
   double cost = 0;
-  final double finalCost;
-  Map groceryItems = {
-    "Milk": 40,
-    "beef": 390,
-    "Apple": 15,
-    "Tomato": 17,
-    "Orange": 20,
-  };
-  for (int i in groceryItems.values) {
-    cost += i;
+  final double totalCost;
+  List<Map<String, dynamic>> groceryItems = [
+    {"name": "Milk", "price": 40},
+    {"name": "beef", "price": 390},
+    {"name": "Apple", "price": 15},
+    {"name": "Tomato", "price": 17},
+    {"name": "Orange", "price": 20}
+  ];
+  for (var i = 0; i < 5; i++) {
+    cost += groceryItems[i]['price'];
   }
-  finalCost = cost + cost * tax;
-  print("Cost: $cost EGP \nTotal Cost: $finalCost EGP");
+  totalCost = cost + cost * tax;
+
+  print("Cost: $cost EGP \nTotal Cost: $totalCost EGP");
 }
